@@ -1,7 +1,8 @@
 import React from "react"
-import { Link as GatsbyLink } from "gatsby"
+import { Link as GLink } from "gatsby"
 import { BsMoon } from "react-icons/bs"
-import { FaSun } from "react-icons/fa"
+import { FaSun, FaLinkedin, FaKaggle } from "react-icons/fa"
+import { FiGithub } from "react-icons/fi"
 import {
   Flex,
   Spacer,
@@ -18,7 +19,7 @@ import {
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <VStack align="stretch" p="2">
+    <VStack align="stretch" p="1">
       <Flex p="4">
         <Box>
           <Text
@@ -27,7 +28,9 @@ const Navbar = () => {
             fontSize="3xl"
             fontWeight="extrabold"
           >
-            Devil Blogs
+            <Link as={GLink} to="/" variant="header">
+              DevilDev
+            </Link>
           </Text>
         </Box>
         <Spacer />
@@ -37,24 +40,42 @@ const Navbar = () => {
       </Flex>
       <Flex>
         <Box mr="4" ml="4">
-          <Link as={GatsbyLink} to="/" className="nav-link">
-            Home
-          </Link>
-        </Box>
-        <Box mr="4">
-          <Link as={GatsbyLink} to="/about">
+          <Link as={GLink} to="/about">
             About
           </Link>
         </Box>
         <Box mr="4">
-          <Link as={GatsbyLink} to="/contact" className="nav-link">
+          <Link as={GLink} to="/blog">
+            Blog
+          </Link>
+        </Box>
+        <Box mr="4">
+          <Link as={GLink} to="/contact">
             Contact
           </Link>
         </Box>
         <Spacer />
         <Box mr="4">
-          <Link as={GatsbyLink} to="/contact" className="nav-link">
-            Contact
+          <Link href="https://github.com/devildev98" isExternal color="primary">
+            <FiGithub fontSize="1.4rem" />
+          </Link>
+        </Box>
+        <Box mr="4">
+          <Link
+            href="https://github.com/devildev98"
+            isExternal
+            color="blue.800"
+          >
+            <FaLinkedin fontSize="1.4rem" />
+          </Link>
+        </Box>
+        <Box mr="4">
+          <Link
+            href="https://github.com/devildev98"
+            isExternal
+            color="blue.400"
+          >
+            <FaKaggle fontSize="1.4rem" />
           </Link>
         </Box>
       </Flex>

@@ -4,7 +4,7 @@ import { Box, Heading } from "@chakra-ui/react"
 
 const contact = () => {
   return (
-    <Layout>
+    <Layout title="contact">
       <Box p={8} bg="blue.400">
         <Heading>Contact Page</Heading>
       </Box>
