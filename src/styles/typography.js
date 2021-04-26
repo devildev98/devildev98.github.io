@@ -1,4 +1,18 @@
-import { Heading, Text } from "@chakra-ui/react"
+import {
+  Heading,
+  Text,
+  UnorderedList,
+  ListItem,
+  OrderedList,
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+} from "@chakra-ui/react"
+
 import React from "react"
 
 export const H1 = ({ children }) => (
@@ -38,7 +52,66 @@ export const H6 = ({ children }) => (
 )
 
 export const P = ({ children }) => (
-  <Text as="p" pb="1rem">
+  <Text
+    as="p"
+    pb="1rem"
+    fontSize={["sm", "md", "lg"]}
+    letterSpacing="-0.005em"
+    wordBreak="break-word"
+  >
     {children}
   </Text>
 )
+
+export const BQuote = ({ children }) => (
+  <Text
+    as="blockquote"
+    borderLeft="4px solid"
+    borderLeftColor="blue.200"
+    mx="0"
+    pl="4"
+    mb="1rem"
+    mt="1rem"
+    sx={{ ".chakra-text": { fontStyle: "italic", pb: "0" } }}
+  >
+    {children}
+  </Text>
+)
+
+export const Ul = ({ children }) => (
+  <UnorderedList pl="2">{children}</UnorderedList>
+)
+export const Ol = ({ children }) => <OrderedList pl="2">{children}</OrderedList>
+export const Li = ({ children }) => (
+  <ListItem fontSize={["sm", "md", "lg"]} letterSpacing="-0.005em">
+    {children}
+  </ListItem>
+)
+
+export const CTable = ({ children }) => (
+  <Table
+    pb="1rem"
+    w="100%"
+    my="4"
+    variant="striped"
+    fontSize={["sm", "md", "lg"]}
+  >
+    {children}
+  </Table>
+)
+
+export const CTh = ({ children }) => (
+  <Th verticalAlign="bottom" borderBottomWidth={["thin", "medium"]}>
+    {children}
+  </Th>
+)
+export const CTd = ({ children }) => (
+  <Td verticalAlign="top" borderBottomWidth="thin">
+    {children}
+  </Td>
+)
+
+export const CThead = ({ children }) => <Thead bg="blue.400">{children}</Thead>
+export const CTbody = ({ children }) => <Tbody>{children}</Tbody>
+export const CTfoot = ({ children }) => <Tfoot>{children}</Tfoot>
+export const CTr = ({ children }) => <Tr>{children}</Tr>

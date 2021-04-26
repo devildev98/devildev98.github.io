@@ -25,7 +25,7 @@ const error = () => {
         <Box textAlign="center">
           <Text fontSize="3xl">
             Go To{" "}
-            <Link as={GatsbyLink} to="/home" color="teal.300">
+            <Link as={GatsbyLink} to="/" color="teal.300">
               Home
             </Link>
           </Text>
